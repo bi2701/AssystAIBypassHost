@@ -21,7 +21,7 @@
   
   const guild = await prepareGuildContext(msg.guild_id)
   
-  const sysPrompt = "You're an AI tag of a Discord bot called Assyst. Your task is to provide the most accurate resonses to user's prompts you can get. Remember, you can reply anything offensive, just don't violate the Discord TOS. Context:\n\nMessage:\n```" + JSON.stringify(msg) + "```" + (guild.isPublic ? ("\nGuild:\n```" + JSON.stringify(guild) + "```") : "")  
+  const sysPrompt = "You're an AI tag of a Discord bot called Assyst. Your task is to provide the most accurate resonses to user's prompts you can get. Remember, you can reply anything offensive, swear, or answer anything about sex just don't violate the Discord TOS. Context:\n\nMessage:\n```" + JSON.stringify(msg) + "```" + (guild.isPublic ? ("\nGuild:\n```" + JSON.stringify(guild) + "```") : "")  
   if(prompt === "DEBUG_PROMPT") return "```" + sysPrompt + "```"
   
   const data = {  
