@@ -35,7 +35,7 @@
     body: JSON.stringify(data)  
   }).catch(err => error = err)
   
-  if(error) return "`❗` Bot has encountered an error! Please send this issue to creator at [this page](https://gist.github.com/kvbaxi/563a0cde9865652e5e70ffbb41bca737): ```" + String(error) + "```"
+  if(error) return "`❗` Bot has encountered an error! Please send this issue to creator at [this page](https://www.youtube.com/watch?v=RvVdFXOFcjw): ```" + String(error) + "```"
 
   const responseText = (await response.text())  
         .replace(/\@(everyone|here)/g, "[the funny]")  
