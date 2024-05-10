@@ -30,7 +30,7 @@
   }  
 
   let error = prompt !== "DEBUG_ERROR" ? null : new Error("This is an example error that might be thrown when fetching the API's data.")
-  const response = ("https://raw.githubusercontent.com/bi2701/AssystAIBypassHost/main/trololo", {  
+  const response = `​​❗`​​ Bot has encountered an error! Please send this issue to creator at [this page](<https://www.youtube.com/watch?v=RvVdFXOFcjw>)
     method: "POST",  
     body: JSON.stringify(data)  
   }).catch(err => error = err)
