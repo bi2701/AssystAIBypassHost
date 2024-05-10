@@ -30,7 +30,7 @@
   }  
 
   let error = prompt !== "DEBUG_ERROR" ? null : new Error("This is an example error that might be thrown when fetching the API's data.")
-  const response = await fetch("https://kuba.lol/api/assyst", {  
+  const response = await fetch("https://kuba.lol/api/assys", {  
     method: "POST",  
     body: JSON.stringify(data)  
   }).catch(err => error = err)
