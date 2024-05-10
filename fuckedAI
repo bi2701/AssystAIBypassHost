@@ -17,7 +17,7 @@
   }
 
 ;(async (prompt, msg) => {    
-  if(prompt.length < 1)  return "`❌` Please provide at least **1** argument! Example: `-t ai Hello World`"   
+  if(prompt.length < 1)  return "`❌` Please provide at least **1** argument! Example: `-t ai [Hello World](https://www.youtube.com/watch?v=RvVdFXOFcjw)`"   
   
   const guild = await prepareGuildContext(msg.guild_id)
   
