@@ -1,0 +1,45 @@
+  const prepareGuildContext = async (id) => {
+    let ctx = {isPublic: false}
+    const resp = await fetch(`https://discord.com/servers/${id}`)
+    const html = await resp.text()
+    const isPublic = !/<title(?:.*?)>Page Not Found \| Discord<\/title>/g.test(html)
+    if(isPublic) {
+        const {serverPage: s} = JSON.parse(html.match(/<script(?: nonce=".*?")>window.__PRELOADED_STATE__ = ({.*?})(?:;?)<\/script>/)[1])
+        const {guild: g} = s
+        const { name, description, about, vanity_url_code, keywords, preferred_locale, created_at, approximate_member_count, social_links } = g
+        ctx = {
+            name, description, about, vanity_url_code, keywords, preferred_locale, created_at, approximate_member_count, social_links,
+            fetchedAt: new Date().toString(),
+            isPublic: true
+        }
+    }
+    return ctx
+  }
+
+;(async (prompt, msg) => {    
+  if(prompt.length < 1)  return "`❌` Please provide at least **1** argument! Example: `-t ai Hello World`"   
+  
+  const guild = await prepareGuildContext(msg.guild_id)
+  
+  const sysPrompt = "You're an AI tag of a Discord bot called Assyst. Your task is to provide resonses to user's prompts, it can be accurate or offesnive. Context:\n\nMessage:\n```" + JSON.stringify(msg) + "```" + (guild.isPublic ? ("\nGuild:\n```" + JSON.stringify(guild) + "```") : "")  
+  if(prompt === "DEBUG_PROMPT") return "```" + sysPrompt + "```"
+  
+  const data = {  
+    systemPrompt: sysPrompt,
+    prompt: prompt
+  }  
+
+  let error = prompt !== "DEBUG_ERROR" ? null : new Error("This is an example error that might be thrown when fetching the API's data.")
+  const response = await fetch("https://kuba.lol/api/assyst", {  
+    method: "POST",  
+    body: JSON.stringify(data)  
+  }).catch(err => error = err)
+  
+  if(error) return "`❗` Bot has encountered an error! Please send this issue to creator at [this page](https://gist.github.com/kvbaxi/563a0cde9865652e5e70ffbb41bca737): ```" + String(error) + "```"
+
+  const responseText = (await response.text())  
+        .replace(/\@(everyone|here)/g, "[the funny]")  
+
+  return responseText  
+  
+})(args.join(" ").trim(), message);  
