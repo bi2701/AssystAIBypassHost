@@ -1,0 +1,64 @@
+{js:{ignore:   
+const getRandomString = arr => arr[Math.floor(Math.random() * arr.length)];   
+const myArray = [   
+  "**You lose 100000$ HAHAHAHAHHAHAHHA**", 
+  "**You lose 5$**",   
+  "**You Won 20$**",  
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 10$**", 
+  "**You lose 100$**",   
+  "**You lose 10$**",   
+  "**You lose 20$**",   
+  "**You lose 10$**",    
+  "**You won 100$**",
+  "**You lose 5$**",
+  "**You lose 5$**",
+  "**You lose 5$**",
+  "**You lose 5$**",
+  "**You lose, uh i mean won 1000$**",
+  "**You woman, oops i meant won, uh i mean lose 100$** hhahahhahahah",
+  "**You won uh i mean lose 100 TRILLION DOLLARS** hhahahhahahahHAHAHAAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHHHAAHAHAHAH",
+  "**YOU won 10000$ NOOOOOOOOO**"
+  "**YOU WON 10000$!!!!!!!!**"
+  "**YOU WON 100000000000000000000000000000000000000000000$!!!!!!!!**"
+  "**YOU WON 100000000000000000000000000000000000000000000 TRILLION DOLLARS$!!!!!!!!**"
+  "**YOU WON 100000000000000000 GAZILLION DOLLARS$!!!!!!!!**"
+  "**You Won 20$**",
+  "**You Won 20$**",
+  "**You Won 20$**",
+  "**You Won 20$**",
+  "**You Won 20$**",
+  "**You Won 20$**",
+  "**You Won 20$**",
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 5$**",
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 5$**", 
+  "**You lose 5$**",
+];   
+const randomString = getRandomString(myArray);   
+randomString ;   
+}}
