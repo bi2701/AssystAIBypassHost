@@ -1,4 +1,4 @@
-{js:{ignore:    
+{ignore:    
 const getRandomString = arr => arr[Math.floor(Math.random() * arr.length)];    
 const myArray = [    
   ""Afghanistan (AF)",
